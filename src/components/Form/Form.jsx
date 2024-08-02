@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContactsList } from '../../redux/selector';
-import { addContact } from '../../redux/operations';
+import { addContact } from '../../redux/contacts/operations';
 
 export const Form =() => {
 const dispatch = useDispatch();
