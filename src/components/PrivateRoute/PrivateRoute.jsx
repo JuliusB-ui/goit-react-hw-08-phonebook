@@ -1,0 +1,1 @@
+// Private route - can't access /contacts if not logged in

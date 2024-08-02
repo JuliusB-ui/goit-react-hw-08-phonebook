@@ -1,0 +1,1 @@
+// /login and /register will be restricted if user is logged in
