@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { useDispatch } from 'react-redux'
 import { logIn } from '../../redux/auth/authOperations'
+import css from './LoginPage.module.css'
 
 const LoginPage = () => {
 
@@ -35,14 +36,14 @@ const LoginPage = () => {
             <title>Login</title>
         </Helmet>
         <main>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleLogin} className={css.form}>
                 <label>Email
-                    <input type="email" name="email" value={email} onChange={handleEmailChange}/>
+                    <input className={css.input} type="email" name="email" value={email} onChange={handleEmailChange}/>
                 </label>
                 <label>Password
-                    <input type="password" name="password" value={password} onChange={handlePasswordChange}/>
+                    <input className={css.input} type="password" name="password" value={password} onChange={handlePasswordChange}/>
                 </label>
-                <button>Log in</button>
+                <button className={css.button}>Log in</button>
             </form>
         </main>
     </HelmetProvider>

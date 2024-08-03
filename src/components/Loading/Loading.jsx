@@ -4,7 +4,7 @@ export const Loader = () => {
     return (
         <FadeLoader
         size={150}
-        color="blue"
+        color="aquamarine"
         aria-label="Loading Spinner"
         data-testid="loader"/>
     )

@@ -1,9 +1,10 @@
 // contains registration form(username, email, password)
 
-import React, { useState } from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import React, { useState } from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/authOperations';
+import css from './RegisterPage.module.css';
 
 const RegisterPage = () => {
     const [name, setName] = useState('');
@@ -35,9 +36,9 @@ const RegisterPage = () => {
         }
         dispatch(register(credentials))
 
-        // setName('');
-        // setEmail('');
-        // setPassword('');
+        setName('');
+        setEmail('');
+        setPassword('');
     }
 
   return (
@@ -46,17 +47,17 @@ const RegisterPage = () => {
             <title>Register</title>
         </Helmet>
         <main>
-            <form onSubmit={handleSubmit}>
-                <label>Name
-                    <input type="text" name='name' value={name} onChange={handleNameChange}/>
+            <form onSubmit={handleSubmit} className={css.form}>
+                <label className={css.label}>Name
+                    <input className={css.input} type="text" name='name' value={name} onChange={handleNameChange}/>
                 </label>
-                <label>Email
-                    <input type="email" name='email' value={email} onChange={handleEmailChange}/>
+                <label className={css.label}>Email
+                    <input className={css.input} type="email" name='email' value={email} onChange={handleEmailChange}/>
                 </label>
-                <label>Password
-                    <input type="password" name='password' value={password} onChange={handlePasswordChange}/>
+                <label className={css.label}>Password
+                    <input className={css.input} type="password" name='password' value={password} onChange={handlePasswordChange}/>
                 </label>
-                <button >Register</button>
+                <button className={css.button}>Register</button>
             </form>
         </main>
     </HelmetProvider>

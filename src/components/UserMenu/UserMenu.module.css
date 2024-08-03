@@ -1,0 +1,27 @@
+.userNav {
+    display: flex;
+    gap: 12px;
+    padding: 0 12px;
+}
+
+.welcome{
+    font-weight: 500;
+    color: #396679;
+}
+
+.userName {
+    color:#233f4b;
+    font-weight: 700;
+}
+
+.button {
+    border: 1px solid #396679;
+    border-radius: 8px;
+    padding: 0 10px;
+    background-color: rgb(208, 238, 255);
+}
+
+.button:hover, .button:active {
+    background-color: #396679;
+    color: white;
+}
