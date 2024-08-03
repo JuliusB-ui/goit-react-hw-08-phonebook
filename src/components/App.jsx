@@ -1,29 +1,26 @@
-import { Form } from './Form/Form';
-import { Filter } from './Filter/Filter';
-import { List } from './List/List';
-import { Toaster } from 'react-hot-toast';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchContacts } from '../redux/contacts/operations';
+
+import { React, lazy } from 'react';
 import { useAuth } from 'hooks/useAuth';
 import { Loader } from './Loading/Loading';
-import HomePage from 'pages/HomePage/HomePage';
+import {Routes, Route} from 'react-router-dom';
+import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute/PrivateRoute';
+import { Layout } from './Layout';
 
-
-
-
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'))
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'))
+const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'))
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'))
 
 export const App =() => {
-  const dispatch=useDispatch();
+
   const {isRefreshing} = useAuth();
   
-  useEffect(()=>{
-    dispatch(fetchContacts())
-  }, [dispatch]);
+
 
   return isRefreshing? (<Loader/>) : (
     <Routes>
-      <Route path="/" element={<Header/>}>
+      <Route path="/" element={<Layout/>}>
         <Route index element={<HomePage/>}/>
         <Route path="/register" element={<RestrictedRoute redirectTo="/contacts" component={<RegisterPage/>}/>
         }/>
@@ -37,10 +34,3 @@ export const App =() => {
 
 }
 
-{/* <Toaster/>
-<h1>Phonebook</h1>
-<Form />
-
-<h2>Contacts</h2>
-<Filter/>
-<List/> */}
