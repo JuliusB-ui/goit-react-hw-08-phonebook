@@ -1,7 +1,5 @@
 // header contains the nav bar(Navigation) and the changing login(UserMenu and AuthNav)
 
-
-
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import {Navigation} from '../Navigation/Navigation'

@@ -23,9 +23,7 @@ const ContactsPage = () => {
             <title>Contacts</title>
         </Helmet>
         <div>
-
             <Form />
-
             <h2>Contacts</h2>
             <Filter/>
             <List/>

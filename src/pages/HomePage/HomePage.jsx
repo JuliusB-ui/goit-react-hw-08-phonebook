@@ -8,10 +8,9 @@ const HomePage = () => {
         <title>Phonebook</title>
       </Helmet>
       <div>
-        <h1>Phonebook welcome page</h1>
+        <h1 >Phonebook welcome page</h1>
       </div>
     </HelmetProvider>
-
   )
 }
 

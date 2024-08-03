@@ -1,9 +1,10 @@
-import { ClipLoader } from "react-spinners/ClipLoader";
+import { FadeLoader } from "react-spinners";
 
 export const Loader = () => {
     return (
-        <ClipLoader
+        <FadeLoader
         size={150}
+        color="blue"
         aria-label="Loading Spinner"
         data-testid="loader"/>
     )
